@@ -16,9 +16,9 @@ it("should load the text file into an array of words", () => {
   expect(wordPicker.words.length).toBeGreaterThan(0);
 });
 
-it("should return a string given an index", () => {
+it("should return a string", () => {
   var testWord = wordPicker.getRandomWord();
-  expect(typeof testWord).toEqual(typeof "");
+  expect(typeof testWord).toBe('string');
 });
 
 it("should return a different number each time", () => {
@@ -29,5 +29,5 @@ it("should return a different number each time", () => {
 
 it("should return an integer", () => {
   var integer = wordPicker.getRandomInt(0, wordPicker.words.length);
-  expect(typeof integer).toEqual(typeof 1);
+  expect(typeof integer).toBe('number');
 });

@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "react-native";
 import { shallow } from "enzyme";
 import MainMenu from "../../src/components/mainmenu";
+import MenuTitle from "../../src/components/menutitle";
+import MenuButton from "../../src/components/menubutton";
 
 let component;
 
@@ -14,6 +15,10 @@ it("renders without crashing", () => {
   expect(component.name()).toEqual("View");
 });
 
-it("should have 3 buttons rendered", () => {
-  expect(component.find(Button)).toHaveLength(3);
+it("should display title", () => {
+  expect(component.find(MenuTitle)).toHaveLength(1);
+});
+
+it("should have 3 menu buttons rendered", () => {
+  expect(component.find(MenuButton)).toHaveLength(3);
 });
