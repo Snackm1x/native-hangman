@@ -4,8 +4,7 @@ import WordPicker from "../../src/components/wordpicker";
 let wordPicker;
 
 beforeEach(() => {
-  wordPicker = new WordPicker();
-  wordPicker.loadWords();
+  wordPicker = WordPicker;
 });
 
 it("should create a new WordPicker object", () => {

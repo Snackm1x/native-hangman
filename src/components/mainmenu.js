@@ -4,16 +4,8 @@ import MenuTitle from "../components/menutitle";
 import MenuButton from "../components/menubutton";
 
 export default class MainMenu extends Component {
-  onPlayPressed() {
-    console.log("We want to play hangman!");
-  }
-
-  onOptionsPressed() {
-    console.log("We opened the options screen!");
-  }
-
-  onQuitPressed() {
-    console.log("We quit the program!");
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -21,9 +13,8 @@ export default class MainMenu extends Component {
       <View style={styles.container}>
         <MenuTitle />
         <View style={styles.buttonContainer}>
-          <MenuButton text='Play' onPressed={this.onPlayPressed} />
-          <MenuButton text='Options' onPressed={this.onOptionsPressed}/>
-          <MenuButton text='Quit' onPressed={this.onQuitPressed}/>
+          <MenuButton text="Play" onPressed={() => this.props.navigation.navigate('Game')} />
+          <MenuButton text="Quit" onPressed={() => console.log('We should quit the game')} />
         </View>
       </View>
     );
@@ -40,5 +31,5 @@ const styles = StyleSheet.create({
   buttonContainer: {
     paddingTop: 60,
     alignItems: "center"
-  },
+  }
 });

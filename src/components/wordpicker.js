@@ -1,9 +1,10 @@
 const path = require('path');
 var fs = require('fs');
 
-export default class WordPicker {
+class WordPicker {
     constructor(){
         this.words = [];
+        this.loadWords();
     }
 
     loadWords(){
@@ -27,3 +28,5 @@ export default class WordPicker {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 }
+const wordPicker = new WordPicker();
+export default wordPicker;

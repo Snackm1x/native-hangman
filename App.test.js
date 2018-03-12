@@ -1,9 +1,9 @@
 import React from 'react';
+import { shallow } from "enzyme";
 import App from './App';
 
-import renderer from 'react-test-renderer';
-
 it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
-  expect(rendered).toBeTruthy();
+  const component = shallow(<App />);
+  expect(component).not.toBeNull();
+  expect(component.name()).toEqual("NavigationContainer");
 });
