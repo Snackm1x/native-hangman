@@ -1,18 +1,8 @@
-const path = require('path');
-var fs = require('fs');
+import wordBank from '../database/words';
 
 class WordPicker {
     constructor(){
-        this.words = [];
-        this.loadWords();
-    }
-
-    loadWords(){
-        var file = fs.readFileSync(path.resolve('./src/database', 'words.txt'), 'utf8');
-        var split = file.split(',');
-        split.forEach(function(word){
-            this.words.push(word)
-        }, this);
+        this.words = wordBank;
     }
 
     getRandomWord(){
