@@ -7,6 +7,15 @@ export default class GameScreen extends Component {
   constructor(props){
     super(props);
     this.word = WordPicker.getRandomWord();
+    this.wordArray = this.splitWord(this.word);
+  }
+
+  splitWord(word){
+    let temp = [];
+    for(var i = 0; i < word.length; i++){
+      temp.push(word[i]);
+    }
+    return temp;
   }
 
   static navigationOptions = {
