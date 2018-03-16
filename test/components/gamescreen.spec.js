@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import GameScreen from "../../src/components/gamescreen";
 import Hangman from "../../src/components/hangman";
+import WordContainer from '../../src/containers/word-container';
 
 describe("gamescreen", () => {
   let component;
@@ -23,8 +24,10 @@ describe("gamescreen", () => {
     expect(component.props().word).not.toBeNull();
   });
 
-  it("should split the word into individual letters and create placeholders for the letters", () => {
-    expect(component.props().wordArray).not.toEqual(undefined);
-    expect(component.props().wordArray).toHaveLength(component.props().word.length);
+  it("should have a container for the winning word", () =>{
+    expect(component.find(WordContainer)).toHaveLength(1);
+  });
+
+  it("should have a container for letters that have been guessed", () => {
   });
 });
