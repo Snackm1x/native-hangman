@@ -1,11 +1,11 @@
 import { StackNavigator } from "react-navigation";
-import MainMenu from "./mainmenu";
-import GameScreen from "./gamescreen";
+import MenuScreen from "../screens/menuscreen";
+import GameScreen from "../screens/gamescreen";
 
 export default (RootNavigator = StackNavigator(
   {
     Home: {
-      screen: MainMenu
+      screen: MenuScreen
     },
     Game: {
       screen: GameScreen

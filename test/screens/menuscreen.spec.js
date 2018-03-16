@@ -1,13 +1,13 @@
 import React from "react";
 import { shallow } from "enzyme";
-import MainMenu from "../../src/components/mainmenu";
+import MenuScreen from "../../src/screens/menuscreen";
 import MenuTitle from "../../src/components/menutitle";
 import MenuButton from "../../src/components/menubutton";
 
 describe("mainmenu", () => {
   let component;
   beforeEach(() => {
-    component = shallow(<MainMenu />);
+    component = shallow(<MenuScreen />);
   });
 
   it("renders without crashing", () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import GameScreen from "../../src/components/gamescreen";
+import GameScreen from "../../src/screens/gamescreen";
 import Hangman from "../../src/components/hangman";
 import WordContainer from '../../src/containers/word-container';
 

@@ -3,7 +3,7 @@ import { Text, TouchableHighlight, StyleSheet, View } from "react-native";
 import MenuTitle from "../components/menutitle";
 import MenuButton from "../components/menubutton";
 
-export default class MainMenu extends Component {
+export default class MenuScreen extends Component {
   constructor(props) {
     super(props);
   }

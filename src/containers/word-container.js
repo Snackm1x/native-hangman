@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Letter from "../components/letter";
 
 export default class WordContainer extends Component {
@@ -16,6 +16,12 @@ export default class WordContainer extends Component {
 
   render() {
     const letterArray = this.buildLetters();
-    return <View>{letterArray}</View>;
+    return <View style={styles.container}>{letterArray}</View>;
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+      flexDirection:'row'
+  }
+});

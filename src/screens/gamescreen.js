@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import Hangman from "./hangman";
-import WordPicker from "./wordpicker";
+import Hangman from "../components/hangman";
+import WordPicker from "../components/wordpicker";
 import WordContainer from '../containers/word-container';
 
 export default class GameScreen extends Component {
@@ -27,7 +27,7 @@ export default class GameScreen extends Component {
     return (
       <View style={styles.gameContainer}>
         <Hangman />
-        <WordContainer wordArray={this.wordArray} />{" "}
+        <WordContainer wordArray={this.wordArray} />
       </View>
     );
   }
