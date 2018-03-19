@@ -19,7 +19,7 @@ export default class GuessContainer extends Component {
   }
 
   render() {
-    return <View style={styles.guessContainer}>{this.buildGuesses}</View>;
+    return <View style={styles.guessContainer}>{this.buildGuesses()}</View>;
   }
 }
 

@@ -6,15 +6,13 @@ import Letter from "../../src/components/letter";
 describe("guess-container", () => {
   let component;
   beforeEach(() => {
-    component = shallow(<GuessContainer guesses={[]} />);
-    component.instance().addGuess("a");
-    component.instance().addGuess("b");
+    component = shallow(<GuessContainer guesses={['a', 'b']} />);
   });
   it("should contain a list of incorrect guesses", () => {
     expect(component.instance().props.guesses).toHaveLength(2);
   });
 
   it("should display the list of incorrect guesses with letter components", () => {
-    expect(component.props().children).toHaveLength(2);
+    expect(component.find(Letter)).toHaveLength(2);
   });
 });

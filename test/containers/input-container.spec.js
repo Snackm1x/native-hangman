@@ -1,11 +1,19 @@
 import React from "react";
+import { Button, TextInput } from "react-native";
 import { shallow } from "enzyme";
 import InputContainer from "../../src/containers/input-container";
-import Input from "../../src/components/input";
 
 describe("input-container", () => {
+  let component;
+  beforeEach(() => {
+    component = shallow(<InputContainer submitInput={() => {}}/>);
+  });
+
   it("should contain a field for input", () => {
-    const component = shallow(<InputContainer />);
-    expect(component.find(Input)).toHaveLength(1);
+    expect(component.find(TextInput)).toHaveLength(1);
+  });
+
+  it("should contain a button to submit input", () => {
+    expect(component.find(Button)).toHaveLength(1);
   });
 });

@@ -4,26 +4,22 @@ import GuessContainer from "../containers/guess-container";
 import Hangman from "../components/hangman";
 import InputContainer from "../containers/input-container";
 import WordPicker from "../components/wordpicker";
-import WordContainer from '../containers/word-container';
+import WordContainer from "../containers/word-container";
 
 export default class GameScreen extends Component {
   constructor(props) {
     super(props);
     this.word = WordPicker.getRandomWord();
-    this.wordArray = this.splitWord(this.word);
-  }
-
-  splitWord(word) {
-    let temp = [];
-    for (var i = 0; i < word.length; i++) {
-      temp.push(word[i]);
-    }
-    return temp;
+    this.wordArray = splitWord(this.word);
   }
 
   static navigationOptions = {
     title: "Native Hangman"
   };
+
+  handleGuess(guess){
+
+  }
 
   render() {
     return (
@@ -35,6 +31,14 @@ export default class GameScreen extends Component {
       </View>
     );
   }
+}
+
+function splitWord(word) {
+  let temp = [];
+  for (var i = 0; i < word.length; i++) {
+    temp.push(word[i]);
+  }
+  return temp;
 }
 
 const styles = StyleSheet.create({
